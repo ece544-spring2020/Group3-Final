@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER pitch_shifter
+	OPTION supported_peripherals = (pitch_shifter);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = pitch_shifter;
+END DRIVER
