@@ -346,15 +346,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>pitch_shifter_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="pitch_shifter" spirit:vendor="user.org" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_pitch_shifter_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_M00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_S00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>xlslice_ifft_out_imaginary</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
@@ -369,6 +360,25 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlslice_0_2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DIN_FROM">15</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">16</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>pitch_shifter_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="pitch_shifter" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_pitch_shifter_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_M00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_S00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>pitch_shifter_in_phase</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_pitch_shifter_in_mag_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_TO">16</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">31</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">16</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
@@ -532,8 +542,9 @@
       <spirit:adHocConnection>
         <spirit:name>cordic_fwd_m_axis_dout_tdata</spirit:name>
         <spirit:internalPortReference spirit:componentRef="cordic_fwd" spirit:portRef="m_axis_dout_tdata"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_tdata"/>
         <spirit:internalPortReference spirit:componentRef="pitch_shifter_in_mag" spirit:portRef="Din"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_tdata"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_in_phase" spirit:portRef="Din"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>cordic_fwd_m_axis_dout_tvalid</spirit:name>

@@ -40,14 +40,14 @@
 		input wire  M_AXIS_TREADY
 	);
 
-localparam MAX_CLOCKED_OUT = 4096;
-reg [11:0] count;
+localparam MAX_BRAM_READS = 4096;
+reg [WIDTH_BRAM_READ_ADDR:0] count;
 enum {IDLE, INITIALIZING, CONVERTING} pitchshiftstate; 
 
 wire ready;
 reg [WIDTH_BRAM_READ_DATA - 1 : 0] dbuf1, dbuf2, d;
-reg validm2, validm1, valid;
-reg lastm2, lastm1, last;
+reg validm3, validm2, validm1, valid;
+reg last;
 reg repzerom2, repzerom1, repzero;
 reg [1:0] n_bram_overflows;
 
@@ -79,8 +79,7 @@ always @(posedge M_AXIS_ACLK) begin
             case (n_bram_overflows)
                 2'b00: begin
                     // If there arent any in the buffer, move the pipeline
-            		lastm1 <= lastm2;
-            		last <= lastm1;
+                    validm2 <= validm3;
             		validm1 <= validm2;
             		valid <= validm1;
 					repzerom1 <= repzerom2;
@@ -95,14 +94,14 @@ always @(posedge M_AXIS_ACLK) begin
 					else
         		    	d <= read_bram_d;
                     // Indicate that 2 cycles from now, the data is valid
-                    validm2 <= 1'b1;
+                    validm3 <= 1'b1;
                     // If the address on the bram is the next to last, then
                     // set the last flag in the pipeline next cycle, otherwise
                     // indicate that it isnt last
-                    if(count == MAX_CLOCKED_OUT - 1)
-                        lastm2 <= 1'b1;
+                    if(count == MAX_BRAM_READS)
+                        last <= 1'b1;
                     else
-                        lastm2 <= 1'b0;
+                        last <= 1'b0;
                     // Go on to the next address, as the previous address is now in the pipe
                     if((idx < 0) || (idx > last_idx)) begin
 						// Send out zero instead (a couple cycles from now)
@@ -166,30 +165,30 @@ always @(posedge M_AXIS_ACLK) begin
             // These are cases where the data isnt valid for some reason.
             // Just push the pipeline along to try to get to valid data.  Perhaps
             // we are just initializing the pipeline for the first time
-            lastm1 <= lastm2;
-            last <= lastm1;
+            validm2 <= validm3;
             validm1 <= validm2;
             valid <= validm1;
+
 			repzerom1 <= repzerom2;
 			repzero <= repzerom1;
             count <= count + 1;
             // Assign the current bram data out
             // it aligns with the address requested
             // 2 cycles ago, and will hopefully be trasferred
-            // next clock
+            // next clock (3 cycles total latency)
 			if(repzero)
 				d <= 0;
 			else
             	d <= read_bram_d;
-            // Indicate that 2 cycles from now, the data is valid
-            validm2 <= 1'b1;
+            // Indicate that 3 cycles from now, the data is valid
+            validm3 <= 1'b1;
             // If the address on the bram is the last, then
             // set the last flag in the pipeline, otherwise
             // indicate that it isnt last
-            if(count == MAX_CLOCKED_OUT - 1)
-                lastm2 <= 1'b1;
+            if(count == MAX_BRAM_READS)
+                last <= 1'b1;
             else
-                lastm2 <= 1'b0;
+                last <= 1'b0;
             // Go on to the next address, as the previous address is now in the pipe
 			if((idx < 0) || (idx > last_idx)) begin
 				// Send out zero instead (a couple cycles from now)
@@ -209,9 +208,9 @@ always @(posedge M_AXIS_ACLK) begin
         count <= 0;
 		idx <= -n_bins_to_shift;
         read_bram_addr <= -n_bins_to_shift;
-        validm2 <= 1'b1;
-        lastm1 <= lastm2;
-        last <= lastm1;
+        last <= 0;
+        validm3 <= 1'b1;
+        validm2 <= validm3;
         validm1 <= validm2;
         valid <= validm1;
 		repzerom1 <= repzerom2;
@@ -229,7 +228,7 @@ always @(posedge M_AXIS_ACLK) begin
     endcase
 end
 
-assign last_idx = ((MAX_CLOCKED_OUT/2) - 1) + n_bins_to_shift;
+assign last_idx = ((MAX_BRAM_READS/2) - 1) + n_bins_to_shift;
 
 // TODO: Improve this to properly mirror the shifted result
 // Procedural block to manage state
@@ -250,7 +249,12 @@ always @(posedge M_AXIS_ACLK) begin
 				pitchshiftstate <= IDLE;
 			else
 				pitchshiftstate <= CONVERTING;
-            if(count >= (MAX_CLOCKED_OUT/2) - 1)
+            // if count is equal or larger than halfway - 2, then start decrementing
+            // For example, if there are 4096 total samples, and count is zero indexed,
+            // we want values of count = 0 .. 2046 to still increment so that on the 2047th
+            // sample, will start decrementing on the next sample (2048 through 4095).
+            // (4096 / 2) - 2 = 2046
+            if(count >= (MAX_BRAM_READS/2) - 2)
                 incdec <= -1;
             else
                 incdec <= 1;
@@ -264,11 +268,10 @@ initial begin
     count = 0;
 	idx = 0;
     incdec = 0;
+    validm3 = 1'b0;
     validm2 = 1'b0;
     validm1 = 1'b0;
     valid = 1'b0;
-    lastm2 = 1'b0;
-    lastm1 = 1'b0;
     last = 1'b0;
     read_bram_addr = 12'h000;
     n_bram_overflows = 2'b00;
