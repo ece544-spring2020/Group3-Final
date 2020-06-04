@@ -1,0 +1,3 @@
+[submodule "flask-half-full"]
+	path = flask-half-full
+	url = https://github.com/ece544-spring2020/flask-half-full.git
