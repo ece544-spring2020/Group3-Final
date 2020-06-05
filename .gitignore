@@ -1,0 +1,30 @@
+# ECE 544 Vivado project Gitignore
+
+# Dont include VSCode project configuration folder
+.vscode
+
+# Dont include the project
+# but do include the hdf file within the project
+fft_experiment
+
+# Dont include the hidden Xilinx folders
+.Xil
+
+# Dont include all these logs and journals everywhere
+*.jou
+*.log
+*.str
+*.tmp
+
+# Ignore all contents under ipi_bd by default
+# in order to avoid generated products
+ipi_bd/*
+!ipi_bd/*.bd
+# Except keep all the directories under ipi_bd
+!ipi_bd/*/
+# but ignore all the contents of those directories
+ipi_bd/*/*
+# Except dont ignore the bd files
+!ipi_bd/*/*.bd
+
+.ipynb_checkpoints
