@@ -45,21 +45,9 @@ module buffer2speaker
     );
     
     reg [MEM_ADDR_WIDTH:0] read_addr;
-    reg pingPong;
+    wire pingPong;
     
-    
-    
-    //write data to RAM
-    always @( posedge HCLK or negedge HRESETn) begin
-        if(!HRESETn) begin
-            pingPong <= 1'b0;
-        end
-        else if (pingPong_write_addr == 0) begin
-            pingPong <= ~pingPong;
-        end
-        
-    end
-    
+    assign pingPong = !read_addr[MEM_ADDR_WIDTH];
     assign wea = pingPong;
     assign web = !pingPong;
     
