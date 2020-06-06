@@ -76,8 +76,6 @@
 
 	wire bram_transfer_complete;
 	wire integer n_bins_to_shift;
-	//TODO: Remove this assign
-	assign n_bins_to_shift = 0;
 
 // Instantiation of Axi Bus Interface S00_AXI
 // This is used by the Microblaze to write the amount of bins
@@ -86,6 +84,7 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) pitch_shifter_v1_0_S00_AXI_inst (
+		.n_bins_to_shift(n_bins_to_shift)
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

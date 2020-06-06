@@ -15,7 +15,7 @@
 	)
 	(
 		// Users to add ports here
-
+		output wire signed [31:0] n_bins_to_shift,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -80,6 +80,8 @@
     		// accept the read data and response information.
 		input wire  S_AXI_RREADY
 	);
+
+	reg signed [31:0] nbts_reg;
 
 	// AXI4LITE signals
 	reg [C_S_AXI_ADDR_WIDTH-1 : 0] 	axi_awaddr;
@@ -398,7 +400,10 @@
 	end    
 
 	// Add user logic here
-
+	always @(posedge S_AXI_ACLK) begin
+		nbts_reg <= slv_reg0;
+	end
+	assign n_bins_to_shift = nbts_reg;
 	// User logic ends
 
 	endmodule

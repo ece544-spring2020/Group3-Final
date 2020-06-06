@@ -48,12 +48,15 @@ XStatus PITCH_SHIFTER_Reg_SelfTest(void * baseaddr_p)
 
 	for (write_loop_index = 0 ; write_loop_index < 4; write_loop_index++)
 	  PITCH_SHIFTER_mWriteReg (baseaddr, write_loop_index*4, (write_loop_index+1)*READ_WRITE_MUL_FACTOR);
-	for (read_loop_index = 0 ; read_loop_index < 4; read_loop_index++)
+	for (read_loop_index = 0 ; read_loop_index < 4; read_loop_index++) {
+		// Skip the first register since it is read only
+		if(read_loop_index == 0)
+			continue;
 	  if ( PITCH_SHIFTER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
 	    xil_printf ("Error reading register value at address %x\n", (int)baseaddr + read_loop_index*4);
 	    return XST_FAILURE;
 	  }
-
+	}
 	xil_printf("   - slave register write/read passed\n\n\r");
 
 	return XST_SUCCESS;
