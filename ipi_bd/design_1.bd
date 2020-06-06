@@ -599,23 +599,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>pitch_shifter_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="pitch_shifter" spirit:vendor="user.org" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_pitch_shifter_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_M00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_S00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>buffer2speaker_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="buffer2speaker" spirit:vendor="user.org" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_buffer2speaker_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="MEM_ADDR_WIDTH">12</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>blk_mem_gen_2</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="blk_mem_gen" spirit:vendor="xilinx.com" spirit:version="8.4"/>
         <spirit:configurableElementValues>
@@ -655,6 +638,23 @@
           <spirit:configurableElementValue spirit:referenceId="Port_B_Write_Rate">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Port_B_Enable_Rate">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="use_bram_block">Stand_Alone</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>buffer2speaker_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="buffer2speaker" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_buffer2speaker_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MEM_ADDR_WIDTH">12</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>pitch_shifter_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="pitch_shifter" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_pitch_shifter_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_M00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_S00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -761,10 +761,10 @@
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M05_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M06_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s00_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="buffer2speaker_0" spirit:portRef="HRESETn"/>
         <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axi_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="buffer2speaker_0" spirit:portRef="HRESETn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>bram_to_fft_0_bram_read_addr</spirit:name>
@@ -843,12 +843,12 @@
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M05_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M06_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s00_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="blk_mem_gen_3" spirit:portRef="clka"/>
+        <spirit:internalPortReference spirit:componentRef="blk_mem_gen_2" spirit:portRef="clka"/>
+        <spirit:internalPortReference spirit:componentRef="buffer2speaker_0" spirit:portRef="HCLK"/>
         <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axi_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="buffer2speaker_0" spirit:portRef="HCLK"/>
-        <spirit:internalPortReference spirit:componentRef="blk_mem_gen_3" spirit:portRef="clka"/>
-        <spirit:internalPortReference spirit:componentRef="blk_mem_gen_2" spirit:portRef="clka"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>clk_100MHz_1</spirit:name>
@@ -1129,7 +1129,7 @@
       <spirit:adHocConnection>
         <spirit:name>fft_to_bram_0_bram_write_addr</spirit:name>
         <spirit:internalPortReference spirit:componentRef="fft_to_bram_0" spirit:portRef="bram_write_addr"/>
-        <spirit:internalPortReference spirit:componentRef="buffer2speaker_0" spirit:portRef="pingPong_read_addr"/>
+        <spirit:internalPortReference spirit:componentRef="buffer2speaker_0" spirit:portRef="pingPong_write_addr"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>speaker_0_ready</spirit:name>
