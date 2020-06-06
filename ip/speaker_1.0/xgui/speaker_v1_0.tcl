@@ -9,6 +9,9 @@ proc init_gui { IPINST } {
   set_property tooltip {Width of S_AXI address bus} ${C_S00_AXI_ADDR_WIDTH}
   ipgui::add_param $IPINST -name "C_S00_AXI_BASEADDR" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_HIGHADDR" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "AUD_SAMPLE_FREQ_HZ" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "SYSCLK_FREQ_MHZ" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "AUD_DATA_WIDTH" -parent ${Page_0}
 
 
 }

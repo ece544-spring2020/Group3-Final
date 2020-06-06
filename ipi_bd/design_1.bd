@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x71DCE049392810E3" bd:device="xc7a100tcsg324-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="design_1" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xC1C539D721F4B813" bd:device="xc7a100tcsg324-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="design_1" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -233,6 +233,18 @@
               <spirit:left>7</spirit:left>
               <spirit:right>0</spirit:right>
             </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>PWM_audio_0</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>PDM_sd_0</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
           </spirit:wire>
         </spirit:port>
       </spirit:ports>
@@ -491,15 +503,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>pitch_shifter_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="pitch_shifter" spirit:vendor="user.org" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_pitch_shifter_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_M00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_S00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>xlconstant_0</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
@@ -585,6 +588,23 @@
         <spirit:componentRef spirit:library="ip" spirit:name="xlconcat" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconcat_1_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>speaker_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="speaker" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_speaker_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="AUD_SAMPLE_FREQ_HZ">32768</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>pitch_shifter_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="pitch_shifter" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_pitch_shifter_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_M00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_S00_AXIS_TDATA_WIDTH">32</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -676,9 +696,6 @@
         <spirit:name>rst_clk_wiz_0_100M_peripheral_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_clk_wiz_0_100M" spirit:portRef="peripheral_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="fft_to_bram_0" spirit:portRef="s00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="bram_to_fft_0" spirit:portRef="m00_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="nexys4IO_0" spirit:portRef="s00_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="PmodENC_0" spirit:portRef="s_axi_aresetn"/>
@@ -693,6 +710,10 @@
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M04_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M05_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M06_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s00_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axi_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>bram_to_fft_0_bram_read_addr</spirit:name>
@@ -751,9 +772,6 @@
         <spirit:internalPortReference spirit:componentRef="rst_clk_wiz_0_100M" spirit:portRef="slowest_sync_clk"/>
         <spirit:internalPortReference spirit:componentRef="cordic_inv" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="fft_to_bram_0" spirit:portRef="s00_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="bram_to_fft_0" spirit:portRef="m00_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0" spirit:portRef="Clk"/>
         <spirit:internalPortReference spirit:componentRef="nexys4IO_0" spirit:portRef="s00_axi_aclk"/>
@@ -773,6 +791,10 @@
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M04_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M05_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M06_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s00_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axi_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>clk_100MHz_1</spirit:name>
@@ -989,6 +1011,21 @@
         <spirit:name>axi_timer_0_generateout0</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_timer_0" spirit:portRef="generateout0"/>
         <spirit:internalPortReference spirit:componentRef="nexys4IO_0" spirit:portRef="Clock"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>fft_to_bram_0_bram_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fft_to_bram_0" spirit:portRef="bram_dout"/>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="Data_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>speaker_0_PWM_audio</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="PWM_audio"/>
+        <spirit:externalPortReference spirit:portRef="PWM_audio_0"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>speaker_0_PDM_sd</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="PDM_sd"/>
+        <spirit:externalPortReference spirit:portRef="PDM_sd_0"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
@@ -3539,20 +3576,20 @@
     <spirit:version>10.0</spirit:version>
     <spirit:busInterfaces>
       <spirit:busInterface>
-        <spirit:name>M_AXI_DP</spirit:name>
-        <spirit:master>
-          <spirit:addressSpaceRef spirit:addressSpaceRef="Data"/>
-        </spirit:master>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
         <spirit:name>DLMB</spirit:name>
         <spirit:master>
           <spirit:addressSpaceRef spirit:addressSpaceRef="Data"/>
         </spirit:master>
         <spirit:busType spirit:library="interface" spirit:name="lmb" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:abstractionType spirit:library="interface" spirit:name="lmb_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>M_AXI_DP</spirit:name>
+        <spirit:master>
+          <spirit:addressSpaceRef spirit:addressSpaceRef="Data"/>
+        </spirit:master>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
       </spirit:busInterface>
       <spirit:busInterface>
         <spirit:name>ILMB</spirit:name>
