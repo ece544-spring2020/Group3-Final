@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
+
 module buffer2speaker
 #(
     parameter integer DATA_WIDTH = 16,
@@ -30,7 +31,7 @@ module buffer2speaker
     input [DATA_WIDTH-1:0] pingPong_din,
     output reg[DATA_WIDTH-1:0] pingPong_dout,
     input speaker_ready,
-    input [MEM_ADDR_WIDTH-1:0] pingPong_read_addr,
+    input [MEM_ADDR_WIDTH-1:0] pingPong_write_addr,
     
     output reg[MEM_ADDR_WIDTH-1:0] addra,
     output reg[DATA_WIDTH-1:0] dina,
@@ -43,43 +44,33 @@ module buffer2speaker
     output web
     );
     
-    reg [MEM_ADDR_WIDTH:0] write_addr;
+    reg [MEM_ADDR_WIDTH:0] read_addr;
     wire pingPong;
-    assign pingPong = write_addr[MEM_ADDR_WIDTH];
     
-    
-    
-    //write data to RAM
-    always @( posedge HCLK or negedge HRESETn) begin
-        if(!HRESETn) begin
-            write_addr <= 0;
-        end
-        else if (pingPong) begin
-            dina <= pingPong_din;
-            write_addr <= write_addr + 1;
-        end
-        else if (!pingPong) begin
-            dinb <= pingPong_din;
-            write_addr <= write_addr + 1;
-        end
-        
-    end
-    
+    assign pingPong = !read_addr[MEM_ADDR_WIDTH];
     assign wea = pingPong;
     assign web = !pingPong;
     
+    
+    always @(posedge HCLK or negedge HRESETn) begin
+        if(!HRESETn)
+           read_addr <= 0;
+        else if(speaker_ready)
+            read_addr <= read_addr + 1;
+    end
+    
     // if pingPong = 1, write to port A, read from port B, 
     // otherwise read from port A, write to port B
-    always @(pingPong, write_addr, pingPong_read_addr) begin
+    always @(pingPong, read_addr, pingPong_write_addr) begin
         if(pingPong && speaker_ready) begin
-             addra <= write_addr;
+             addra <= pingPong_write_addr;
              pingPong_dout <= douta;
-             addrb <= pingPong_read_addr;
+             addrb <= read_addr;
         end
         else if(!pingPong && speaker_ready) begin
-            addrb <= write_addr;
+            addrb <= pingPong_write_addr;
             pingPong_dout <= doutb;
-            addra <= pingPong_read_addr;
+            addra <= read_addr;
         end
     end
     
