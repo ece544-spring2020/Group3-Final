@@ -40,7 +40,9 @@ module nexysA7fpga(
 	output  [7:0]       JA,             // JA Pmod conector - Can be used for debugging purposes
     inout	[7:0] 		JB,				// JB Pmod connector - PmodOLEDrgb
     inout	[7:0] 		JC,				// JC Pmod connector - PmodEnc signals
-	output	[7:0]		JD				// JD Pmod connector - Can be used for debugging purposes
+	output	[7:0]		JD,				// JD Pmod connector - Can be used for debugging purposes
+	output              AUD_PWM,
+	output              AUD_SD
 );
 
 // internal variables
@@ -126,7 +128,9 @@ assign  Pmod_out_0_pin10_io = JC[7];
 
 // instantiate the embedded system
 design_1 design_1
-(// PMOD OLED pins 
+(// PMOD OLED pins
+        .PDM_sd_0(AUD_SD),
+        .PWM_audio_0(AUD_PWM),
         .PmodOLEDrgb_out_0_pin10_i(pmodoledrgb_out_pin10_i),
 	    .PmodOLEDrgb_out_0_pin10_o(pmodoledrgb_out_pin10_o),
 	    .PmodOLEDrgb_out_0_pin10_t(pmodoledrgb_out_pin10_t),

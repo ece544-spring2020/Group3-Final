@@ -140,7 +140,8 @@
 		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
 	) pitch_shifter_v1_0_M00_AXIS_inst (
 		.ready_to_shift(bram_transfer_complete),
-		.n_bins_to_shift(n_bins_to_shift),
+		.n_bins_to_shift(0),
+		//.n_bins_to_shift(n_bins_to_shift),
 		.read_bram_d(bram_din),
 		.read_bram_addr(bram_read_addr),
 		.M_AXIS_ACLK(m00_axis_aclk),
