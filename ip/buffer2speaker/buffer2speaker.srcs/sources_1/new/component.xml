@@ -18,7 +18,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>32741835</spirit:value>
+            <spirit:value>c580c51e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -34,7 +34,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>32741835</spirit:value>
+            <spirit:value>c580c51e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -128,7 +128,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>pingPong_read_addr</spirit:name>
+        <spirit:name>pingPong_write_addr</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
@@ -292,7 +292,7 @@
       <spirit:file>
         <spirit:name>buffer2speaker.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_32741835</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_c580c51e</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -351,21 +351,21 @@
       <xilinx:displayName>buffer2speaker_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2020-06-06T22:44:35Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2020-06-06T23:25:06Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b50abee_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@189d6e6c_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d03cd8b_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4432a5d4_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a34e862_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aef359b_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c26e7ab_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fa4309a_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@147d3de6_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fdb7b65_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ec8eae4_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@339e707a_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71e4f5fe_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@388ff1b7_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects/buffer2speaker/buffer2speaker.srcs/sources_1/new</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="f773c842"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="b85caa64"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="569bae70"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="ba450352"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="69d39ace"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="90e949dd"/>
     </xilinx:packagingInfo>
