@@ -39,10 +39,11 @@ module microphone
     output reg [DATA_WIDTH-1:0] m_axis_tdata,
     output	m_axis_tlast,  
     input	m_axis_tready,
-    output	m_axis_tvalid
+    output	reg m_axis_tvalid
     );
     
     localparam bit_freq = (SYSCLK_FREQ_MHZ * 1000000)/ (2 * AUD_SAMPLE_FREQ_HZ * DATA_WIDTH);
+    localparam dc_bias = (1 << DATA_WIDTH-1);
     integer clock_counter, bit_counter, packetcounter;
     reg[DATA_WIDTH-1:0] temp_data;
     reg pdm_clk_rising;
@@ -75,17 +76,22 @@ module microphone
         if(~s_aresetn | EN) begin
             temp_data <= 16'd0;
             bit_counter <= 0;
+            m_axis_tvalid = 1'b0;
          end
          else if (pdm_clk_rising) begin
             temp_data[DATA_WIDTH - bit_counter - 1] <= pdm_data; 
-            if(bit_counter == DATA_WIDTH - 1)
+            if(bit_counter == DATA_WIDTH - 1) begin
                     bit_counter <= 0;
-             else
+                    m_axis_tvalid = 1'b1;
+            end
+            else begin
                 bit_counter  <= bit_counter + 1;
+                m_axis_tvalid = 1'b0;
+            end
          end  
     end
     
-    assign m_axis_tvalid = (bit_counter == 0);
+    
 
     // assign data_ready signal and load the output data
     always @(posedge s_aclk or negedge s_aresetn) begin
@@ -94,7 +100,7 @@ module microphone
              packetcounter <= 0;
          end
          else if(m_axis_tvalid  && m_axis_tready) begin
-             m_axis_tdata <= temp_data;
+             m_axis_tdata <= temp_data  - dc_bias;
              if(packetcounter == PACKET_SIZE -1)
                 packetcounter <= 0;
              else
