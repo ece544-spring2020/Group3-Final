@@ -124,7 +124,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>75f643ac</spirit:value>
+            <spirit:value>5447d82a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -140,7 +140,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>75f643ac</spirit:value>
+            <spirit:value>5447d82a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -261,7 +261,7 @@
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:typeName>reg</spirit:typeName>
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
@@ -334,7 +334,7 @@
       <spirit:file>
         <spirit:name>microphone.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_75f643ac</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_5447d82a</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -402,8 +402,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>microphone_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>5</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2020-06-07T18:09:54Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>7</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-06-08T19:03:55Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@5e159d7f_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@7dcbc799_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
@@ -445,13 +445,47 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@695e7988_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@246c67c_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@45055fa_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64da05db_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a15d293_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c7fd53_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@352dbaf7_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3130ea91_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48191fd2_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77939437_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13db2edc_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6403ec69_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13fdc53_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a0eb931_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10d195fc_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47be871f_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@744461f2_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64d698f5_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3df11831_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@356de144_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@694736ba_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f2511d5_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5edf829_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cda50f8_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@561106b0_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16ee1622_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42bf3041_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63d31b33_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c03b528_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79959d2b_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dfbdb2_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4becd691_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@555200a6_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1145f927_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fc54dc9_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d930051_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@166b2c0d_ARCHIVE_LOCATION">/home/angeline/Documents/ECE544/Projects_ip/microphone/microphone.srcs/sources_1/new</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="a302f57d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d7456947"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="d6639d80"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="f2ab23b9"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="ffc83b38"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="ebf6a3ca"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="dbc94fa5"/>
     </xilinx:packagingInfo>

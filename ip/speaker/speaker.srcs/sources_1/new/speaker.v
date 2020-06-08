@@ -35,7 +35,7 @@ module speaker
 
     input [DATA_WIDTH-1:0] s_axis_tdata,
     input	s_axis_tlast,  //unused
-    output	s_axis_tready,
+    output	reg s_axis_tready,
     input	s_axis_tvalid
     
     );
@@ -48,18 +48,25 @@ module speaker
     reg pdm_clk_rising;
     
     assign PDM_sd = 1'b1;
-    assign s_axis_tready = (bit_counter == 0);
     
     // Count the number of sampled bits
     always @(posedge s_aclk or negedge s_aresetn)
         if(~s_aresetn | EN)
             bit_counter <= 0;
         else if (pdm_clk_rising)
-            if(bit_counter == DATA_WIDTH-1)
+            if(bit_counter == DATA_WIDTH-1) 
                 bit_counter <= 16'd0;
-            else
+            else 
                 bit_counter  <= bit_counter + 1;
  
+     // Count the number of sampled bits
+    always @(posedge s_aclk or negedge s_aresetn)
+        if(~s_aresetn | EN)
+            s_axis_tready = 1'b0;
+        else if((bit_counter == DATA_WIDTH-1) && (pdm_clk_rising == 1'b1)) 
+            s_axis_tready = 1'b1;
+        else
+            s_axis_tready = 1'b0;
                   
     // serialize the pdm_data
     always @(posedge s_aclk or negedge s_aresetn)

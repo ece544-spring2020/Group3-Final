@@ -37,7 +37,7 @@ module microphone
 
 
     output reg [DATA_WIDTH-1:0] m_axis_tdata,
-    output	m_axis_tlast,  
+    output	reg m_axis_tlast,  
     input	m_axis_tready,
     output	reg m_axis_tvalid
     );
@@ -76,21 +76,24 @@ module microphone
         if(~s_aresetn | EN) begin
             temp_data <= 16'd0;
             bit_counter <= 0;
-            m_axis_tvalid = 1'b0;
          end
          else if (pdm_clk_rising) begin
             temp_data[DATA_WIDTH - bit_counter - 1] <= pdm_data; 
-            if(bit_counter == DATA_WIDTH - 1) begin
+            if(bit_counter == DATA_WIDTH - 1) 
                     bit_counter <= 0;
-                    m_axis_tvalid = 1'b1;
-            end
-            else begin
-                bit_counter  <= bit_counter + 1;
-                m_axis_tvalid = 1'b0;
-            end
-         end  
+            else 
+                bit_counter  <= bit_counter + 1;  
+         end
     end
     
+    // assign m_axis_tvalid
+    always @(posedge s_aclk or negedge s_aresetn)
+        if(~s_aresetn | EN)
+            m_axis_tvalid = 1'b0;
+        else if((bit_counter == DATA_WIDTH-1) && (pdm_clk_rising == 1'b1)) 
+            m_axis_tvalid = 1'b1;
+        else
+            m_axis_tvalid = 1'b0;
     
 
     // assign data_ready signal and load the output data
@@ -108,6 +111,14 @@ module microphone
          end 
     end
     
-    assign m_axis_tlast = (packetcounter == PACKET_SIZE-1);
+    // assign m_axis_tlast
+    always @(posedge s_aclk or negedge s_aresetn)
+        if(~s_aresetn | EN)
+            m_axis_tlast = 1'b0;
+        else if((packetcounter == PACKET_SIZE-1) && (pdm_clk_rising == 1'b1)) 
+            m_axis_tlast = 1'b1;
+        else
+            m_axis_tlast = 1'b0;
+    
     
 endmodule
