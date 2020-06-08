@@ -41,6 +41,7 @@ module speaker
     );
     
     localparam bit_freq = (SYSCLK_FREQ_MHZ * 1000000)/ (AUD_SAMPLE_FREQ_HZ * DATA_WIDTH);
+    localparam dc_bias = (1 << DATA_WIDTH-1);
     
     integer clock_counter, bit_counter;
     reg[DATA_WIDTH-1:0] temp_data;
@@ -65,7 +66,7 @@ module speaker
         if(~s_aresetn | EN)
             temp_data <= 16'd0;
         else if(s_axis_tready && s_axis_tvalid)
-             temp_data <= s_axis_tdata;
+             temp_data <= s_axis_tdata + dc_bias;
              
      // assign the serialized PWM_audio signal         
      assign PWM_audio = temp_data[DATA_WIDTH - bit_counter - 1];

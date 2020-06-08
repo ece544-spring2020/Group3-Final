@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/angeline/Documents/ECE544/Projects_ip/speaker/speaker.srcs/sources_1/new/speaker.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module speaker
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/angeline/Documents/ECE544/Projects_ip/speaker/speaker.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
