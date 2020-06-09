@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="574314748737fs"></ZoomStartTime>
+      <ZoomEndTime time="574494663396fs"></ZoomEndTime>
+      <Cursor1Time time="575219057000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="191"></NameColumnWidth>
+      <ValueColumnWidth column_width="118"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="logic" fp_name="/testbench/clk_100MHz">
+      <obj_property name="ElementShortName">clk_100MHz</obj_property>
+      <obj_property name="ObjectShortName">clk_100MHz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/reset_rtl_0">
+      <obj_property name="ElementShortName">reset_rtl_0</obj_property>
+      <obj_property name="ObjectShortName">reset_rtl_0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/fwfft_in_real/Dout">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Dout[15:0]</obj_property>
+      <obj_property name="label">FFT_IN_REAL</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group25">
+      <obj_property name="label">FFT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/testbench/design_1_i/forward_xfft/s_axis_config_tdata">
+         <obj_property name="ElementShortName">s_axis_config_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axis_config_tdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/forward_xfft/s_axis_config_tvalid">
+         <obj_property name="ElementShortName">s_axis_config_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axis_config_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/forward_xfft/s_axis_config_tready">
+         <obj_property name="ElementShortName">s_axis_config_tready</obj_property>
+         <obj_property name="ObjectShortName">s_axis_config_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/forward_xfft/s_axis_data_tdata">
+         <obj_property name="ElementShortName">s_axis_data_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axis_data_tdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/forward_xfft/s_axis_data_tvalid">
+         <obj_property name="ElementShortName">s_axis_data_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axis_data_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/forward_xfft/s_axis_data_tready">
+         <obj_property name="ElementShortName">s_axis_data_tready</obj_property>
+         <obj_property name="ObjectShortName">s_axis_data_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/forward_xfft/s_axis_data_tlast">
+         <obj_property name="ElementShortName">s_axis_data_tlast</obj_property>
+         <obj_property name="ObjectShortName">s_axis_data_tlast</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/forward_xfft/m_axis_data_tdata">
+         <obj_property name="ElementShortName">m_axis_data_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_data_tdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/forward_xfft/m_axis_data_tuser">
+         <obj_property name="ElementShortName">m_axis_data_tuser[15:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_data_tuser[15:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/forward_xfft/m_axis_data_tvalid">
+         <obj_property name="ElementShortName">m_axis_data_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axis_data_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/forward_xfft/m_axis_data_tready">
+         <obj_property name="ElementShortName">m_axis_data_tready</obj_property>
+         <obj_property name="ObjectShortName">m_axis_data_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/forward_xfft/m_axis_data_tlast">
+         <obj_property name="ElementShortName">m_axis_data_tlast</obj_property>
+         <obj_property name="ObjectShortName">m_axis_data_tlast</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_in_mag/Dout">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Dout[15:0]</obj_property>
+      <obj_property name="label">PITCHSHIFT_IN_MAG</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_in_phase/Dout">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Dout[15:0]</obj_property>
+      <obj_property name="label">PITCHSHIFT_IN_PHASE</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group309">
+      <obj_property name="label">PITCHSHIFT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/read_bram_d">
+         <obj_property name="ElementShortName">read_bram_d[31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_bram_d[31:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/ready_to_shift">
+         <obj_property name="ElementShortName">ready_to_shift</obj_property>
+         <obj_property name="ObjectShortName">ready_to_shift</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/n_bins_to_shift">
+         <obj_property name="ElementShortName">n_bins_to_shift[31:0]</obj_property>
+         <obj_property name="ObjectShortName">n_bins_to_shift[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/count">
+         <obj_property name="ElementShortName">count[12:0]</obj_property>
+         <obj_property name="ObjectShortName">count[12:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/pitchshiftstate">
+         <obj_property name="ElementShortName">pitchshiftstate[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pitchshiftstate[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/ready">
+         <obj_property name="ElementShortName">ready</obj_property>
+         <obj_property name="ObjectShortName">ready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/dbuf1">
+         <obj_property name="ElementShortName">dbuf1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dbuf1[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/dbuf2">
+         <obj_property name="ElementShortName">dbuf2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dbuf2[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/d">
+         <obj_property name="ElementShortName">d[31:0]</obj_property>
+         <obj_property name="ObjectShortName">d[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/validm3">
+         <obj_property name="ElementShortName">validm3</obj_property>
+         <obj_property name="ObjectShortName">validm3</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/validm2">
+         <obj_property name="ElementShortName">validm2</obj_property>
+         <obj_property name="ObjectShortName">validm2</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/validm1">
+         <obj_property name="ElementShortName">validm1</obj_property>
+         <obj_property name="ObjectShortName">validm1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/valid">
+         <obj_property name="ElementShortName">valid</obj_property>
+         <obj_property name="ObjectShortName">valid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/last">
+         <obj_property name="ElementShortName">last</obj_property>
+         <obj_property name="ObjectShortName">last</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/repzerom2">
+         <obj_property name="ElementShortName">repzerom2</obj_property>
+         <obj_property name="ObjectShortName">repzerom2</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/repzerom1">
+         <obj_property name="ElementShortName">repzerom1</obj_property>
+         <obj_property name="ObjectShortName">repzerom1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/repzero">
+         <obj_property name="ElementShortName">repzero</obj_property>
+         <obj_property name="ObjectShortName">repzero</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/n_bram_overflows">
+         <obj_property name="ElementShortName">n_bram_overflows[1:0]</obj_property>
+         <obj_property name="ObjectShortName">n_bram_overflows[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/idx">
+         <obj_property name="ElementShortName">idx[31:0]</obj_property>
+         <obj_property name="ObjectShortName">idx[31:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+         <obj_property name="AnalogYRangeMin">-150.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">5000.000000</obj_property>
+         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+         <obj_property name="AnalogHorizLine">1000.000000</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/incdec">
+         <obj_property name="ElementShortName">incdec[31:0]</obj_property>
+         <obj_property name="ObjectShortName">incdec[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/last_idx">
+         <obj_property name="ElementShortName">last_idx[31:0]</obj_property>
+         <obj_property name="ObjectShortName">last_idx[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/magnitude_out_slice/Dout">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Dout[15:0]</obj_property>
+      <obj_property name="label">PITCHSHIFT_OUT_MAG</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/phase_out_slice/Dout">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Dout[15:0]</obj_property>
+      <obj_property name="label">PITCHSHIFT_OUT_PHASE</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/xlslice_ifft_out_real/Dout">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Dout[15:0]</obj_property>
+      <obj_property name="label">IFFT_OUT_REAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+</wave_config>
