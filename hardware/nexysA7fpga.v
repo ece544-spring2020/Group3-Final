@@ -203,7 +203,7 @@ design_1 design_1
         .btnU_0(btnU),
         .sw_0(sw),
         // reset and clock 
-        //.sysreset_n(sysreset_n),
+        .sysreset_n(sysreset_n),
         .clk_100MHz(sysclk)
         // UART pins 
         //.uart_rtl_0_rxd(uart_rtl_rxd),
