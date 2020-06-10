@@ -40,30 +40,29 @@ module speaker
     
     );
     
-    localparam bit_freq = (SYSCLK_FREQ_MHZ * 1000000)/ (AUD_SAMPLE_FREQ_HZ * DATA_WIDTH);
+    localparam freq = (SYSCLK_FREQ_MHZ * 1000000)/ AUD_SAMPLE_FREQ_HZ;
     localparam dc_bias = (1 << DATA_WIDTH-1);
-    
-    integer clock_counter, bit_counter;
-    reg[DATA_WIDTH-1:0] temp_data;
+    integer clock_counter;
+    reg[DATA_WIDTH-1:0] temp_data, counter;
     reg pdm_clk_rising;
+    
+    // assign the serialized PWM_audio signal         
+    assign PWM_audio = (counter <= temp_data);
     
     assign PDM_sd = 1'b1;
     
-    // Count the number of sampled bits
+    // Count increment for the PWM
     always @(posedge s_aclk or negedge s_aresetn)
         if(~s_aresetn | EN)
-            bit_counter <= 0;
-        else if (pdm_clk_rising)
-            if(bit_counter == DATA_WIDTH-1) 
-                bit_counter <= 16'd0;
-            else 
-                bit_counter  <= bit_counter + 1;
+            counter <= 0;
+        else
+            counter <= counter + 1;
  
      // Count the number of sampled bits
     always @(posedge s_aclk or negedge s_aresetn)
         if(~s_aresetn | EN)
             s_axis_tready = 1'b0;
-        else if((bit_counter == DATA_WIDTH-1) && (pdm_clk_rising == 1'b1)) 
+        else if(clock_counter == freq) 
             s_axis_tready = 1'b1;
         else
             s_axis_tready = 1'b0;
@@ -75,23 +74,17 @@ module speaker
         else if(s_axis_tready && s_axis_tvalid)
              temp_data <= s_axis_tdata + dc_bias;
              
-     // assign the serialized PWM_audio signal         
-     assign PWM_audio = temp_data[DATA_WIDTH - bit_counter - 1];
-                
-                
+  
      // generate the pdm clock
     always @(posedge s_aclk or negedge s_aresetn) begin
         if(~s_aresetn | EN) begin
             clock_counter <= 0;
-            pdm_clk_rising <= 1'b0;
          end
-         else if(clock_counter == bit_freq) begin
+         else if(clock_counter == freq) begin
             clock_counter <= 0;
-            pdm_clk_rising <= 1'b1;
          end
          else begin
             clock_counter <= clock_counter + 1; 
-            pdm_clk_rising <= 1'b0;   
          end  
     end
     
