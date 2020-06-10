@@ -23,17 +23,17 @@
 module testbench();
 
     reg clk_100MHz;
-    reg reset_rtl_0;
+    reg sysreset_n;
 
     design_1 design_1_i(
         .clk_100MHz(clk_100MHz),
-        .reset_rtl_0(reset_rtl_0)
+        .sysreset_n(sysreset_n)
     );
     
     initial 
     begin 
         clk_100MHz = 0;
-        reset_rtl_0 = 0;
+        sysreset_n = 0;
     end 
 
     always

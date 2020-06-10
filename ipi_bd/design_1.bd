@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xEF0F8C9B573B339C" bd:device="xc7a100tcsg324-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="design_1" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x7679A059170D2E38" bd:device="xc7a100tcsg324-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="design_1" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -14,7 +14,7 @@
     </spirit:parameters>
     <spirit:busInterfaces>
       <spirit:busInterface>
-        <spirit:name>RST.RESET_RTL_0</spirit:name>
+        <spirit:name>RST.SYSRESET_N</spirit:name>
         <spirit:displayName>Reset</spirit:displayName>
         <spirit:description>Reset</spirit:description>
         <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
@@ -406,6 +406,28 @@
           <spirit:configurableElementValue spirit:referenceId="Enable_Safety_Circuit">true</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>pitch_shifter_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="pitch_shifter" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_pitch_shifter_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>speaker_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="speaker" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_speaker_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlconstant_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconstant_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CONST_VAL">0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -436,9 +458,11 @@
         <spirit:name>rst_clk_wiz_0_100M_peripheral_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_clk_wiz_0_100M" spirit:portRef="peripheral_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="bram_to_fft_0" spirit:portRef="m00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="s_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>bram_to_fft_0_bram_read_addr</spirit:name>
@@ -498,9 +522,11 @@
         <spirit:internalPortReference spirit:componentRef="cordic_inv" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="bram_to_fft_0" spirit:portRef="m00_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="fit_timer_0" spirit:portRef="Clk"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="s_aclk"/>
         <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="s00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="pitch_shifter_0" spirit:portRef="m00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>clk_100MHz_1</spirit:name>
@@ -603,6 +629,51 @@
         <spirit:name>bram_to_fft_0_m00_axis_tvalid</spirit:name>
         <spirit:internalPortReference spirit:componentRef="bram_to_fft_0" spirit:portRef="m00_axis_tvalid"/>
         <spirit:internalPortReference spirit:componentRef="forward_xfft" spirit:portRef="s_axis_data_tvalid"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlslice_ifft_out_real_Dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlslice_ifft_out_real" spirit:portRef="Dout"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="s_axis_tdata"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>inverse_xfft_m_axis_data_tlast</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="inverse_xfft" spirit:portRef="m_axis_data_tlast"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="s_axis_tlast"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>fifo_generator_0_s_axis_tready</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="s_axis_tready"/>
+        <spirit:internalPortReference spirit:componentRef="inverse_xfft" spirit:portRef="m_axis_data_tready"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>inverse_xfft_m_axis_data_tvalid</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="inverse_xfft" spirit:portRef="m_axis_data_tvalid"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="s_axis_tvalid"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>fifo_generator_0_m_axis_tdata</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="m_axis_tdata"/>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s_axis_tdata"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>fifo_generator_0_m_axis_tlast</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="m_axis_tlast"/>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s_axis_tlast"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>fifo_generator_0_m_axis_tvalid</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="m_axis_tvalid"/>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s_axis_tvalid"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>speaker_0_s_axis_tready</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="s_axis_tready"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="m_axis_tready"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlconstant_1_dout1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlconstant_1" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="speaker_0" spirit:portRef="EN"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
   </spirit:design>
