@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1154272751000fs"></ZoomStartTime>
-      <ZoomEndTime time="1188472751001fs"></ZoomEndTime>
-      <Cursor1Time time="1159972751000fs"></Cursor1Time>
+      <ZoomStartTime time="1147750638541fs"></ZoomStartTime>
+      <ZoomEndTime time="1150040422212fs"></ZoomEndTime>
+      <Cursor1Time time="2390155165000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="191"></NameColumnWidth>
-      <ValueColumnWidth column_width="114"></ValueColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="37" />
    <wvobject type="logic" fp_name="/testbench/clk_100MHz">
       <obj_property name="ElementShortName">clk_100MHz</obj_property>
       <obj_property name="ObjectShortName">clk_100MHz</obj_property>
@@ -108,6 +108,7 @@
    <wvobject type="group" fp_name="group309">
       <obj_property name="label">PITCHSHIFT</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/read_bram_d">
          <obj_property name="ElementShortName">read_bram_d[31:0]</obj_property>
          <obj_property name="ObjectShortName">read_bram_d[31:0]</obj_property>
@@ -160,10 +161,6 @@
          <obj_property name="ElementShortName">validm1</obj_property>
          <obj_property name="ObjectShortName">validm1</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/valid">
-         <obj_property name="ElementShortName">valid</obj_property>
-         <obj_property name="ObjectShortName">valid</obj_property>
-      </wvobject>
       <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/last">
          <obj_property name="ElementShortName">last</obj_property>
          <obj_property name="ObjectShortName">last</obj_property>
@@ -179,6 +176,10 @@
       <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/repzero">
          <obj_property name="ElementShortName">repzero</obj_property>
          <obj_property name="ObjectShortName">repzero</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/valid">
+         <obj_property name="ElementShortName">valid</obj_property>
+         <obj_property name="ObjectShortName">valid</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/testbench/design_1_i/pitch_shifter_0/inst/pitch_shifter_v1_0_M00_AXIS_inst/n_bram_overflows">
          <obj_property name="ElementShortName">n_bram_overflows[1:0]</obj_property>
@@ -285,101 +286,118 @@
       <obj_property name="label">SPEAKER</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_aclk">
-         <obj_property name="ElementShortName">s_aclk</obj_property>
-         <obj_property name="ObjectShortName">s_aclk</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_aresetn">
-         <obj_property name="ElementShortName">s_aresetn</obj_property>
-         <obj_property name="ObjectShortName">s_aresetn</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/EN">
-         <obj_property name="ElementShortName">EN</obj_property>
-         <obj_property name="ObjectShortName">EN</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/PWM_audio">
-         <obj_property name="ElementShortName">PWM_audio</obj_property>
-         <obj_property name="ObjectShortName">PWM_audio</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/PDM_sd">
-         <obj_property name="ElementShortName">PDM_sd</obj_property>
-         <obj_property name="ObjectShortName">PDM_sd</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/s_axis_tdata">
-         <obj_property name="ElementShortName">s_axis_tdata[15:0]</obj_property>
-         <obj_property name="ObjectShortName">s_axis_tdata[15:0]</obj_property>
-         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-         <obj_property name="CellHeight">100</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
-         <obj_property name="AnalogYRangeMin">0.000000</obj_property>
-         <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
-         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
-         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-         <obj_property name="AnalogHorizLine">0.000000</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_axis_tlast">
-         <obj_property name="ElementShortName">s_axis_tlast</obj_property>
-         <obj_property name="ObjectShortName">s_axis_tlast</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_axis_tready">
-         <obj_property name="ElementShortName">s_axis_tready</obj_property>
-         <obj_property name="ObjectShortName">s_axis_tready</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_axis_tvalid">
-         <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
-         <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/clock_counter">
-         <obj_property name="ElementShortName">clock_counter[31:0]</obj_property>
-         <obj_property name="ObjectShortName">clock_counter[31:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/bit_counter">
-         <obj_property name="ElementShortName">bit_counter[31:0]</obj_property>
-         <obj_property name="ObjectShortName">bit_counter[31:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/temp_data">
-         <obj_property name="ElementShortName">temp_data[15:0]</obj_property>
-         <obj_property name="ObjectShortName">temp_data[15:0]</obj_property>
-         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-         <obj_property name="CellHeight">100</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
-         <obj_property name="AnalogYRangeMin">0.000000</obj_property>
-         <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
-         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
-         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-         <obj_property name="AnalogHorizLine">0.000000</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/pdm_clk_rising">
-         <obj_property name="ElementShortName">pdm_clk_rising</obj_property>
-         <obj_property name="ObjectShortName">pdm_clk_rising</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/DATA_WIDTH">
-         <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
-         <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/AUD_SAMPLE_FREQ_HZ">
-         <obj_property name="ElementShortName">AUD_SAMPLE_FREQ_HZ[31:0]</obj_property>
-         <obj_property name="ObjectShortName">AUD_SAMPLE_FREQ_HZ[31:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/SYSCLK_FREQ_MHZ">
-         <obj_property name="ElementShortName">SYSCLK_FREQ_MHZ[31:0]</obj_property>
-         <obj_property name="ObjectShortName">SYSCLK_FREQ_MHZ[31:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/bit_freq">
-         <obj_property name="ElementShortName">bit_freq[31:0]</obj_property>
-         <obj_property name="ObjectShortName">bit_freq[31:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/dc_bias">
-         <obj_property name="ElementShortName">dc_bias[31:0]</obj_property>
-         <obj_property name="ObjectShortName">dc_bias[31:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_aclk">
+      <obj_property name="ElementShortName">s_aclk</obj_property>
+      <obj_property name="ObjectShortName">s_aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_aresetn">
+      <obj_property name="ElementShortName">s_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s_aresetn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/EN">
+      <obj_property name="ElementShortName">EN</obj_property>
+      <obj_property name="ObjectShortName">EN</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/PWM_audio">
+      <obj_property name="ElementShortName">PWM_audio</obj_property>
+      <obj_property name="ObjectShortName">PWM_audio</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/PDM_sd">
+      <obj_property name="ElementShortName">PDM_sd</obj_property>
+      <obj_property name="ObjectShortName">PDM_sd</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/s_axis_tdata">
+      <obj_property name="ElementShortName">s_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_axis_tlast">
+      <obj_property name="ElementShortName">s_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_axis_tready">
+      <obj_property name="ElementShortName">s_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/s_axis_tvalid">
+      <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/clock_counter">
+      <obj_property name="ElementShortName">clock_counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clock_counter[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/temp_data">
+      <obj_property name="ElementShortName">temp_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/counter">
+      <obj_property name="ElementShortName">counter[15:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/pdm_clk_rising">
+      <obj_property name="ElementShortName">pdm_clk_rising</obj_property>
+      <obj_property name="ObjectShortName">pdm_clk_rising</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/DATA_WIDTH">
+      <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/AUD_SAMPLE_FREQ_HZ">
+      <obj_property name="ElementShortName">AUD_SAMPLE_FREQ_HZ[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AUD_SAMPLE_FREQ_HZ[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/SYSCLK_FREQ_MHZ">
+      <obj_property name="ElementShortName">SYSCLK_FREQ_MHZ[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SYSCLK_FREQ_MHZ[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/freq">
+      <obj_property name="ElementShortName">freq[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/dc_bias">
+      <obj_property name="ElementShortName">dc_bias[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dc_bias[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/speaker_pdm/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_i/speaker_0/inst/speaker_pdm/dout">
+      <obj_property name="ElementShortName">dout</obj_property>
+      <obj_property name="ObjectShortName">dout</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/speaker_pdm/error">
+      <obj_property name="ElementShortName">error[15:0]</obj_property>
+      <obj_property name="ObjectShortName">error[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/speaker_pdm/din_reg">
+      <obj_property name="ElementShortName">din_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">din_reg[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/speaker_pdm/error_0">
+      <obj_property name="ElementShortName">error_0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">error_0[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/speaker_pdm/error_1">
+      <obj_property name="ElementShortName">error_1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">error_1[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/speaker_pdm/NBITS">
+      <obj_property name="ElementShortName">NBITS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NBITS[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_i/speaker_0/inst/speaker_pdm/MAX">
+      <obj_property name="ElementShortName">MAX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX[31:0]</obj_property>
    </wvobject>
 </wave_config>
