@@ -47,8 +47,17 @@ module speaker
     reg pdm_clk_rising;
     
     // assign the serialized PWM_audio signal         
-    assign PWM_audio = (counter <= temp_data);
+    //assign PWM_audio = (counter <= temp_data);
     
+    pdm speaker_pdm
+    (
+      .clk(s_aclk),
+      .din(temp_data),
+      .rst(~s_aresetn),
+      .dout(PWM_audio),
+      .error()
+    );
+
     assign PDM_sd = 1'b1;
     
     // Count increment for the PWM
@@ -89,4 +98,37 @@ module speaker
     end
     
     
+endmodule
+
+// Pulse density Modulator
+module pdm #(parameter NBITS = 16)
+(
+  input wire                      clk,
+  input wire [NBITS-1:0]          din,
+  input wire                      rst,
+  output reg                      dout,
+  output reg [NBITS-1:0]          error
+);
+  localparam integer MAX = 2**NBITS - 1;
+  reg [NBITS-1:0] din_reg;
+  reg [NBITS-1:0] error_0;
+  reg [NBITS-1:0] error_1;
+  always @(posedge clk) begin
+    din_reg <= din;
+    error_1 <= error + MAX - din_reg;
+    error_0 <= error - din_reg;
+  end
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      dout <= 0;
+      error <= 0;
+    end
+    else if (din_reg >= error) begin
+      dout <= 1;
+      error <= error_1;
+    end else begin
+      dout <= 0;
+      error <= error_0;
+    end
+  end
 endmodule

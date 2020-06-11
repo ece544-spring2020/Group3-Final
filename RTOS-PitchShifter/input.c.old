@@ -1,0 +1,63 @@
+#include "input.h"
+#include "xstatus.h"
+#include "PmodENC.h"
+#include "nexys4IO.h"
+#include "stdbool.h"
+#include "xil_types.h"
+#include "xparameters.h"
+#include "microblaze_sleep.h"
+
+
+
+/////////////////////////////
+//
+//    DECLARATION
+//
+/////////////////////////////
+
+static EncoderState _lastencstate;
+static PmodENC pmodENC_inst;
+
+
+int8_t setup_inputs() 
+{
+    // initialize the pmodENC and hardware
+	ENC_begin(&pmodENC_inst, PMODENC_BASEADDR);
+    
+
+    // Initialize the last encoderstate
+    uint32_t setup_enc_state = ENC_getState(&pmodENC_inst);
+
+
+
+    return XST_SUCCESS;
+}
+
+
+
+SwitchInputs get_switch_inputs() 
+{
+    SwitchInputs _sw_ins;
+    uint16_t raw_switches = NX4IO_getSwitches();
+    for(int i = 0; i < N_SWITCHES; i++) {
+        _sw_ins.sws[i] = (raw_switches >> i) & 0x1;
+    }
+    _sw_ins.raw_state = raw_switches;
+    return _sw_ins;
+}
+
+EncoderState get_enc_state() 
+{
+    EncoderState _encstate;
+    uint32_t raw_state = ENC_getState(&pmodENC_inst);
+
+    _encstate.button_pressed = (bool) ENC_buttonPressed(raw_state);
+    _encstate.switch_up = (ENC_switchOn(raw_state) == 0);
+    //xil_printf("%d, switchup: %d\n", ENC_switchOn(raw_state), _encstate.switch_up);
+    _encstate.switch_dir_change = (int8_t) _encstate.switch_up - (int8_t) _lastencstate.switch_up;
+    _encstate.rot_dir = (int8_t) ENC_getRotation(raw_state, _lastencstate.raw_state);
+    _encstate.raw_state = raw_state;
+
+    _lastencstate = _encstate;
+    return _encstate;
+}

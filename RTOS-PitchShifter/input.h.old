@@ -1,0 +1,31 @@
+#include "xil_types.h"
+#include "stdbool.h"
+
+#define N_SWITCHES 16
+
+typedef struct {
+    bool switch_up;
+    int8_t switch_dir_change;
+    bool button_pressed;
+    int8_t rot_dir;
+    uint32_t raw_state;
+} EncoderState;
+
+typedef struct {
+    bool sws[N_SWITCHES];
+    uint16_t raw_state;
+} SwitchInputs;
+
+
+typedef struct {
+    bool switch_up;
+    int8_t switch_dir_change;
+    bool button_pressed;
+    int8_t rot_dir;
+    uint32_t raw_state;
+} EncoderState;
+
+
+extern SwitchInputs get_switch_inputs();
+extern EncoderState get_enc_state();
+extern int8_t setup_inputs();

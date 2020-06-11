@@ -111,7 +111,17 @@ assign JB[7] = pmodoledrgb_out_pin10_io;
 
 // JA and JD connectors can be used for debug purposes
 assign JA = 8'b0000000;
-assign JD = 8'h00; 
+
+wire [15:0] m_axis_tdata_0_w;
+wire s_axis_tready_0_w;
+assign JD[0] = sysclk;
+assign JD[1] = s_axis_tready_0_w;
+assign JD[2] = m_axis_tdata_0_w[10];
+assign JD[3] = m_axis_tdata_0_w[11];
+assign JD[4] = m_axis_tdata_0_w[12];
+assign JD[5] = m_axis_tdata_0_w[13];
+assign JD[6] = m_axis_tdata_0_w[14];
+assign JD[7] = m_axis_tdata_0_w[15];
 
 // PmodENC signals
 // JC - top row
@@ -131,6 +141,8 @@ design_1 design_1
 (// PMOD OLED pins
         .PDM_sd_0(AUD_SD),
         .PWM_audio_0(AUD_PWM),
+        .m_axis_tdata_0(m_axis_tdata_0_w),
+        .s_axis_tready_0(s_axis_tready_0_w),
         .PmodOLEDrgb_out_0_pin10_i(pmodoledrgb_out_pin10_i),
 	    .PmodOLEDrgb_out_0_pin10_o(pmodoledrgb_out_pin10_o),
 	    .PmodOLEDrgb_out_0_pin10_t(pmodoledrgb_out_pin10_t),
@@ -204,10 +216,10 @@ design_1 design_1
         .sw_0(sw),
         // reset and clock 
         .sysreset_n(sysreset_n),
-        .clk_100MHz(sysclk)
+        .clk_100MHz(sysclk),
         // UART pins 
-        //.uart_rtl_0_rxd(uart_rtl_rxd),
-        //.uart_rtl_0_txd(uart_rtl_txd)
+        .uart_rtl_0_rxd(uart_rtl_rxd),
+        .uart_rtl_0_txd(uart_rtl_txd)
         );
         
 // Tristate buffers for the pmodOLEDrgb pins
