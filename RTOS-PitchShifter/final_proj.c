@@ -32,7 +32,7 @@ int8_t setup_displays();
 /////////////////////////////////////////
 
 #define NX4IO_BADDR	XPAR_NEXYS4IO_0_S00_AXI_BASEADDR
-#define PITCH_SHIFTER_BADDR  "ADD the Pitch shifter Adderess"
+#define PITCH_SHIFTER_BADDR  XPAR_PITCH_SHIFTER_0_S00_AXI_BASEADDR
 
 typedef struct INPUTS_HANDOFF_STRUCT{
 	EncoderState rotenc;
